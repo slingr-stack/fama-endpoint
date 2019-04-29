@@ -1,0 +1,70 @@
+{
+    "label": "Fama",
+    "name": "fama",
+    "apiVersion": "v1",
+    "internal": false,
+    "configurationType": "GLOBAL",
+    "deployment": {
+        "profiles":[
+            {
+                "name": "default",
+                "label": "Default",
+                "memory": 256,
+                "description": "Default configuration"
+            }
+        ],
+        "allowMultipleInstances": false
+    },
+    "icon48": "https://storage.googleapis.com/static.slingrs.io/platform/endpoints/fama.png",
+    "configurationHelpUrl": "/endpoints_fama.html#configuration",
+    "status": "ACTIVE",
+    "stores": [],
+    "events": [
+        {
+            "label": "Webhook",
+            "name": "webhook"
+        }
+    ],
+    "functions": [
+        {
+            "label": "GET",
+            "name": "_get"
+        },
+        {
+            "label": "POST",
+            "name": "_post"
+        },
+        {
+            "label": "PUT",
+            "name": "_put"
+        }
+    ],
+    "scripts":[
+        "functions.js"
+    ],
+    "configuration":[
+        {
+            "name": "userName",
+            "label": "User",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "userPassword",
+            "label": "Password",
+            "type": "password"
+        },
+        {
+            "name": "webhook",
+            "label": "Webhook URL",
+            "type": "label",
+            "value": "@config.WEBHOOK_URL"
+        },
+        {
+            "name": "webhookToken",
+            "label": "Webhook token",
+            "type": "text",
+            "defaultGenerator": "utils.generateUUID()"
+        }
+    ]
+}
